@@ -1,0 +1,19 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Hardhat & Solidity
+cache/
+artifacts/
+typechain/
+typechain-types/
+hardhat.config.js.map
+
+.vs
