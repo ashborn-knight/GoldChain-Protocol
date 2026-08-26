@@ -23,36 +23,40 @@ Illegal operations introduce toxic mercury and cyanide into vital river basins (
 
 ## 🚀 Key Features
 
-- **🔐 Cryptographic Whitelisting & Governance (`MinerRegistry.sol`)**:
-  - Regulatory bodies (e.g., Ghana Minerals Commission / EPA) manage on-chain authorization.
-  - Non-compliant or unlicensed mining entities are cryptographically blocked from minting or certifying batches.
-- **🏷️ Digital Batch Tokenization (`GoldBatch.sol`)**:
-  - Raw doré gold batches are minted into verifiable ERC-721 digital certificates.
-  - Immutably logs batch weight, chemical fineness (purity), extraction GPS coordinates, concession licenses, and zero-mercury certifications.
-- **🛡️ Duplicate & Fraud Detection**:
-  - Employs deterministic `keccak256` hashing on batch parameters to prevent double-counting or re-registering physical bullion.
-- **🔍 Public Provenance & QR Verification (`VerificationSystem.sol`)**:
-  - Customs officials, refineries, jewelers, and end consumers can scan a QR code or enter a Token ID to instantly verify authenticity and complete chain-of-custody history.
-- **⚡ Dual Web3 Connectivity**:
-  - Full support for live MetaMask browser extension on Ethereum Sepolia, alongside pre-configured simulated test personas (Regulator, Damang Gold Mine, AngloGold Ashanti, Newmont, and Unauthorized User) for frictionless demonstration.
+- **🔐 Cryptographic Whitelisting & Governance (`MinerRegistry.sol`)**  
+  Regulatory bodies (e.g., Ghana Minerals Commission / EPA) manage on-chain authorization.  
+  Non-compliant or unlicensed mining entities are cryptographically blocked from minting or certifying batches.
+
+- **🏷️ Digital Batch Tokenization (`GoldBatch.sol`)**  
+  Raw doré gold batches are minted into verifiable ERC-721 digital certificates.  
+  Immutably logs batch weight, chemical fineness (purity), extraction GPS coordinates, concession licenses, and zero-mercury certifications.
+
+- **🛡️ Duplicate & Fraud Detection**  
+  Employs deterministic `keccak256` hashing on batch parameters to prevent double-counting or re-registering physical bullion.
+
+- **🔍 Public Provenance & QR Verification (`VerificationSystem.sol`)**  
+  Customs officials, refineries, jewelers, and end consumers can scan a QR code or enter a Token ID to instantly verify authenticity and complete chain-of-custody history.
+
+- **⚡ Dual Web3 Connectivity**  
+  Full support for live MetaMask browser extension on Ethereum Sepolia, alongside pre-configured simulated test personas (Regulator, Damang Gold Mine, AngloGold Ashanti, Newmont, and Unauthorized User) for frictionless demonstration.
 
 ---
 
 ## 🏗️ System Architecture
 ┌─────────────────────────────────────────────────────────┐
-│ React 19 + TypeScript UI │
-│ (Dashboard, Batch Registration, Verification, Admin) │
+│ React 19 + TypeScript UI                                │
+│ (Dashboard, Batch Registration, Verification, Admin)    │
 └────────────────────────────┬────────────────────────────┘
 │
 ethers.js / Web3Context / MetaMask
 │
 ▼
 ┌─────────────────────────────────────────────────────────┐
-│ Ethereum Sepolia Smart Contracts │
-│ │
-│ 1. MinerRegistry.sol (Whitelisting & Auth) │
-│ 2. GoldBatch.sol (ERC-721 Digital Tokens) │
-│ 3. VerificationSystem.sol (Public Cryptographic API)│
+│ Ethereum Sepolia Smart Contracts                        │
+│                                                         │
+│ 1. MinerRegistry.sol (Whitelisting & Auth)              │
+│ 2. GoldBatch.sol (ERC-721 Digital Tokens)               │
+│ 3. VerificationSystem.sol (Public Cryptographic API)    │
 └─────────────────────────────────────────────────────────┘
 
 ---
@@ -76,34 +80,27 @@ goldchain-protocol/
 ├── vite.config.ts           # Vite bundler configuration
 └── package.json             # Dependencies and scripts
 
+```
+
 🛠️ Getting Started
 Prerequisites
 Node.js (v18.0.0 or higher)
+
 npm or yarn
+
 MetaMask browser extension (optional for live Sepolia testing)
+
 Installation
 Clone the repository:
-code
-Bash
 git clone https://github.com/ashborn-knight/GoldChain-Protocol.git
 cd GoldChain-Protocol
+
 Install dependencies:
-code
-Bash
 npm install
-Configure environment variables (Optional):
-code
-Bash
-cp .env.example .env
-Start the local development server:
-code
-Bash
-npm run dev
-Open http://localhost:3000 in your browser.
+
+
 🧪 Smart Contract Deployment & Testing
 To compile and deploy the smart contracts using Hardhat:
-code
-Bash
 # Compile contracts
 npx hardhat compile
 
@@ -112,9 +109,23 @@ npx hardhat test
 
 # Deploy to Sepolia testnet
 npx hardhat run scripts/deploy.cjs --network sepolia
+
 🛡️ Security & Privacy
 No Secrets in Repo: All API keys, RPC credentials, and private keys remain strictly local via .env (ignored by git).
+
 Role-Based Access Control (RBAC): All sensitive administrative smart contract functions enforce onlyOwner / regulator modifiers.
+
 Tamper-Evident Hashing: Gold batch fingerprints are cryptographically anchored on-chain upon block confirmation.
+
 📄 License
 This project is licensed under the MIT License — see the LICENSE file for details.
+
+
+---
+
+✅ Copy this entire block into your `README.md` file. It’s fully Markdown‑compatible and will render perfectly on GitHub.  
+
+👉 Do you want me to also generate a **short tagline** (like one sentence under the repo name) that makes the project sound recruiter‑ready on GitHub and LinkedIn?
+
+
+
