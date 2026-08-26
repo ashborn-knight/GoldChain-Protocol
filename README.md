@@ -39,3 +39,82 @@ Illegal operations introduce toxic mercury and cyanide into vital river basins (
 ---
 
 ## 🏗️ System Architecture
+┌─────────────────────────────────────────────────────────┐
+│ React 19 + TypeScript UI │
+│ (Dashboard, Batch Registration, Verification, Admin) │
+└────────────────────────────┬────────────────────────────┘
+│
+ethers.js / Web3Context / MetaMask
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│ Ethereum Sepolia Smart Contracts │
+│ │
+│ 1. MinerRegistry.sol (Whitelisting & Auth) │
+│ 2. GoldBatch.sol (ERC-721 Digital Tokens) │
+│ 3. VerificationSystem.sol (Public Cryptographic API)│
+└─────────────────────────────────────────────────────────┘
+
+---
+
+## 📦 Project Structure
+
+```bash
+goldchain-protocol/
+├── contracts/               # Solidity Smart Contracts
+│   ├── GoldBatch.sol        # ERC-721 batch tokenization
+│   ├── MinerRegistry.sol    # Regulatory access control & whitelisting
+│   └── VerificationSystem.sol # Public read-only verification gateway
+├── scripts/                 # Deployment & test helper scripts
+├── src/                     # React frontend source code
+│   ├── components/          # Reusable UI components & modals
+│   ├── context/             # Web3 & Wallet Provider Context
+│   ├── pages/               # Application views (Dashboard, Register, Verify, Admin)
+│   ├── types.ts             # TypeScript interfaces and data models
+│   └── App.tsx              # Root application router & navigation
+├── hardhat.config.cjs       # Hardhat network & compiler configuration
+├── vite.config.ts           # Vite bundler configuration
+└── package.json             # Dependencies and scripts
+
+🛠️ Getting Started
+Prerequisites
+Node.js (v18.0.0 or higher)
+npm or yarn
+MetaMask browser extension (optional for live Sepolia testing)
+Installation
+Clone the repository:
+code
+Bash
+git clone https://github.com/ashborn-knight/GoldChain-Protocol.git
+cd GoldChain-Protocol
+Install dependencies:
+code
+Bash
+npm install
+Configure environment variables (Optional):
+code
+Bash
+cp .env.example .env
+Start the local development server:
+code
+Bash
+npm run dev
+Open http://localhost:3000 in your browser.
+🧪 Smart Contract Deployment & Testing
+To compile and deploy the smart contracts using Hardhat:
+code
+Bash
+# Compile contracts
+npx hardhat compile
+
+# Run tests
+npx hardhat test
+
+# Deploy to Sepolia testnet
+npx hardhat run scripts/deploy.cjs --network sepolia
+🛡️ Security & Privacy
+No Secrets in Repo: All API keys, RPC credentials, and private keys remain strictly local via .env (ignored by git).
+Role-Based Access Control (RBAC): All sensitive administrative smart contract functions enforce onlyOwner / regulator modifiers.
+Tamper-Evident Hashing: Gold batch fingerprints are cryptographically anchored on-chain upon block confirmation.
+📄 License
+This project is licensed under the MIT License — see the LICENSE file for details.
